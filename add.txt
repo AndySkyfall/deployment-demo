@@ -1,0 +1,9 @@
+// Root endpoint
+webapp.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
+
+
+webapp.use(express.static(path.join(__dirname, './client/build')));
+
+//Terminal: npm run-script build
